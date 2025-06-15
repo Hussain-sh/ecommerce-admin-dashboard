@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
-import { MdOutlineMenu, MdOutlineClose } from "react-icons/md";
 import { MdKeyboardDoubleArrowRight, MdKeyboardDoubleArrowLeft } from "react-icons/md";
 
 
@@ -93,6 +92,12 @@ const Sidebar = () => {
     ];
 
     const [openSidebar, setOpenSidebar] = useState(true);
+     useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    if (mediaQuery.matches) {
+      setOpenSidebar(false);
+    }
+  }, []);
   return (
     <Wrapper openSidebar={openSidebar}>
         <ToggleWrapper>
