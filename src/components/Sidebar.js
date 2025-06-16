@@ -14,6 +14,10 @@ const Wrapper = styled.div`
     background-color: white;
     width: ${props => props.openSidebar ? '200px' : '50px'};
     transition: width 0.3s ease-in-out;
+
+    @media (max-width: 768px) {
+        width: ${props => props.openSidebar ? '150px' : '50px'};
+    }
 `;
 
 const CompanyName = styled.div`
@@ -39,7 +43,7 @@ const NavLinks = styled.a`
     color: var(--color-accent);
     text-align: left;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
 
     cursor: pointer;
@@ -80,10 +84,6 @@ const Sidebar = () => {
         {
             name: 'Dashboard',
             path: '/'
-        },
-        {
-            name: 'Orders',
-            path: '/orders'
         },
         {
             name: 'Products',
