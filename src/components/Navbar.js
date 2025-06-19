@@ -16,7 +16,13 @@ const Wrapper = styled.div`
 const Navbar = () => {
    const router = useRouter();
   const pathname = router.pathname;
-  const pageName = pathname === '/' ? 'Dashboard' : pathname.charAt(1).toUpperCase() + pathname.slice(2);
+  const pageName = pathname === '/'
+  ? 'Dashboard'
+  : pathname
+      .slice(1)
+      .replace(/-/g, ' ')
+      .replace(/\b\w/g, c => c.toUpperCase());
+
   return (
     <Wrapper>
         {pageName}

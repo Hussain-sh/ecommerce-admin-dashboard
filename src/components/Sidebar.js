@@ -87,7 +87,7 @@ const Sidebar = () => {
         },
         {
             name: 'Products',
-            path: '/products'
+            path: '/product-management'
         }
     ];
 

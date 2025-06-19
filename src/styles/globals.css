@@ -5,6 +5,7 @@
   --color-accent: #3b82f6;
   --color-text-light: #f1f5f9;
   --color-bg: #f8fafc;
+  --color-text-white: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
