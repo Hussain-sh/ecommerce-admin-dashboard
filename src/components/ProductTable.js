@@ -11,8 +11,9 @@ import {
   Avatar
 } from "@mui/material";
 import styled from "styled-components";
-import CustomButton from "./ui-library/CustomButton";
-import EditIcon from '@mui/icons-material/Edit';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 
 
 const TableWrapper = styled.div`
@@ -51,16 +52,22 @@ const ProductTable = ({ onEdit, products }) => {
                 <TableCell>{product.price.toFixed(2)}</TableCell>
                 <TableCell>{product.stock}</TableCell>
                 <TableCell>
-                  <CustomButton
-  onClick={() => onEdit(product)}
-  bg="transparent"
-  color="#1976d2"
-  padding="8px 10px"
-  fontSize="14px"
-  hover="transparent"
->
-  <EditIcon style={{ fontSize: '20px' }} />
-</CustomButton>
+                  <Tooltip title="Edit">
+  <IconButton
+    onClick={() => onEdit(product)}
+    size="small"
+    sx={{
+      border: '1px solid #1976d2',
+      color: '#1976d2',
+      padding: '4px',
+      '&:hover': {
+        backgroundColor: '#e3f2fd',
+      },
+    }}
+  >
+    <EditOutlinedIcon fontSize="small" />
+  </IconButton>
+</Tooltip>
 
                 </TableCell>
               </TableRow>
